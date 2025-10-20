@@ -25,7 +25,7 @@ def init_connections():
         genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
         
         # Create the generative model instance
-        llm_model = genai.GenerativeModel('gemini-1.5-pro-latest')
+        llm_model = genai.GenerativeModel('gemini-2.5-pro')
         
         return db_engine, llm_model
     except Exception as e:
@@ -320,3 +320,4 @@ if prompt := st.chat_input("Your question here... e.g., 'What was our total reve
             st.markdown(final_response)
             # Add assistant's final response to chat history
             st.session_state.messages.append({"role": "assistant", "content": final_response})
+
