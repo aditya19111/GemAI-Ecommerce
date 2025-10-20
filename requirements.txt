@@ -3,6 +3,9 @@ google-generativeai
 python-dotenv
 langchain-google-genai
 chromadb
-sqlite
-regex
 sqlalchemy
+pandas
+altair
+psycopg2-binary
+PyYAML
+streamlit-authenticator
