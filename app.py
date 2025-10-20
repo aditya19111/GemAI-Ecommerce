@@ -12,7 +12,7 @@ def load_dashboard_data():
     Connects to the Supabase DB and fetches data for all dashboard charts.
     """
     try:
-        engine = create_engine(os.getenv("SUPABASE_URI"))
+        engine = create_engine(st.secrets["SUPABASE_URI"])
         with engine.connect() as connection:
             # 1. KPIs
             kpi_query = text("""
@@ -318,3 +318,4 @@ if prompt := st.chat_input("Your question here... e.g., 'What was our total reve
                 st.error(final_response)
 
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
+
