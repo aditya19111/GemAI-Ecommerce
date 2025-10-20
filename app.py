@@ -2,13 +2,8 @@ import streamlit as st
 import google.generativeai as genai
 import pandas as pd
 from sqlalchemy import create_engine, text
-import os
-from dotenv import load_dotenv
 import re
 import altair as alt
-
-# Load environment variables from .env file
-load_dotenv()
 
 # --- Caching Function for Enhanced Dashboard Data ---
 @st.cache_data(ttl=600) # Cache the data for 10 minutes
@@ -321,4 +316,5 @@ if prompt := st.chat_input("Your question here... e.g., 'What was our total reve
             else:
                 final_response = "I couldn't generate an SQL query for your question. Please try rephrasing it."
                 st.error(final_response)
+
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
