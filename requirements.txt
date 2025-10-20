@@ -1,0 +1,8 @@
+streamlit
+google-generativeai
+python-dotenv
+langchain-google-genai
+chromadb
+sqlite
+regex
+sqlalchemy
