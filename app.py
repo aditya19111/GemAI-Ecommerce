@@ -319,7 +319,7 @@ with st.expander("Explore Your Data: Schema and Examples"):
         - `Show me the top 10 most active customers by login count.`
         - `What is the average delivery cost for orders shipped by FedEx?`
         - `Which customers prefer to use a 'Mobile' device?`
-        - `What is the total delivery distance for all completed orders?`
+        - `What is the total delivery distance for the orders which were delievered in the month of may?`
     """)
 
 # --- Chatbot Interface ---
@@ -353,3 +353,4 @@ if prompt := st.chat_input("Your question here... e.g., 'What was our total reve
                 final_response = "I couldn't generate an SQL query for your question. Please try rephrasing it."
                 st.error(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
+
