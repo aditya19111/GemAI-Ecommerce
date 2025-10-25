@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit as st
 import google.generativeai as genai
 import pandas as pd
 from sqlalchemy import create_engine, text
@@ -353,5 +352,6 @@ if prompt := st.chat_input("Your question here... e.g., 'What was our total reve
                 final_response = "I couldn't generate an SQL query for your question. Please try rephrasing it."
                 st.error(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
+
 
 
